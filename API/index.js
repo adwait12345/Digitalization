@@ -1,20 +1,37 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyparser = require('body-parser');
-const cookieParser = require('cookie-parser');
+require('dotenv').config()
 
-const app = express();
-// app use
-app.use(bodyparser.urlencoded({ extended: false }));
-app.use(bodyparser.json());
-app.use(cookieParser());
+const express = require('express')
+const session = require('express-session');
 
-app.get('/', function (req, res) {
-    res.status(200).send(`Welcome to login , sign-up api`);
-});
+const passport = require('passport')
 
-// listening port
-const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-    console.log(`app is live at ${PORT}`);
-});
+const app = express()
+
+require('./passport-setup')
+
+app.set("view engine", 'ejs')
+app.use(session({ secret: 'melody hensley is my spirit animal' }));
+
+app.use(passport.initialize())
+
+app.use(passport.session())
+
+app.get('/', (req, res) => {
+    res.render('pages/index')
+})
+
+app.get('/success',(req,res)=>{
+    res.render('pages/profile')
+})
+
+app.get('/google', passport.authenticate('google', { scope: ['profile', 'email'] }) ,(req, res) => {
+
+})
+
+app.get('/google/callback', passport.authenticate('google', { failureRedirect:'/failed'}), (req, res) => {
+ res.redirect('./success')
+})
+
+app.listen(5000, () => {
+    console.log("App is running on port 5000")
+})
