@@ -1,0 +1,32 @@
+.Sidebar{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.Sidebar li{
+    list-style: none;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor:pointer;
+        margin-bottom: 8px;
+}
+
+.Sidebar li svg{
+    width: 20px;
+    height: 20px;
+}
+.Sidebar span{
+    font-size: 10px;
+}
+.Sidebar a{
+    text-decoration: none;
+    color: #1b1b1b;
+}
+
+.active svg{
+   color: #D83B01;
+}
