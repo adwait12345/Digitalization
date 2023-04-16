@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express = require('express')
+var cors = require('cors');
 const session = require('express-session');
 
 const passport = require('passport')
