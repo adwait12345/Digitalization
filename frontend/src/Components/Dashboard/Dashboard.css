@@ -73,5 +73,23 @@ width: 100%;
 .topp{
     display: flex;
     width: 100%;
-    justify-content: flex-start;
+    justify-content: space-between;
+}
+.lef{
+    display: flex;
+}
+.rig {
+    display: flex;
+    padding: 5px;
+    background-color: burlywood;
+        align-items: center;
+        border-radius: 10px;
+}
+.rig svg{
+    margin-right: 5px;
+}
+.bot{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }

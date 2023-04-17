@@ -9,7 +9,9 @@ export default function Create() {
               <div className="topDashboard">
                   <h2>Create</h2>
                   <div className="profile-login">
-                      <button>AB</button>
+                      {/* <button>AB</button> */}
+                      <div class="sharethis-inline-share-buttons"></div>
+
                   </div>
               </div>
               <div className="botDashboard">
