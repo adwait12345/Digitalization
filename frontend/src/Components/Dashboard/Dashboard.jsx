@@ -1,11 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './Dashboard.css'
 import Sidebar from '../Sidebar/Sidebar'
+import axios from 'axios';
 
 
 
 
-export default function Dashboard(props) {
+export default function Dashboard() {
+
+   const [responce, setresponce] = useState([])
+   const [status, setstatus] = useState('')
+
+    useEffect(()=>{
+    // Using the Request Config
+    axios({
+        method: "get",
+        url: "http://localhost:8000/subscribers/2020BEC067",
+    }).then(function (response) {
+        setresponce(response.data)
+    });
+
+    //     if (responce.data[0].status===false){
+    //       setstatus("Pending")
+    // }
+    },[])
+
   return (
     <>
     <div className="Dashboard">
@@ -20,7 +39,29 @@ export default function Dashboard(props) {
                   <Sidebar/>
                   </div>
                   <div className="botDashboard-right">
+                     <div className="board">
+                        <h4>Recent Applications</h4>
+                        {responce.map((e)=>{
+                            return(
+                                <>
+                                <div className="message">
+                                                                   <div className="topp">
+                                            <p><strong>Name: </strong>{e.data[0].firstname} {e.data[0].lastname}</p>&nbsp;&nbsp;&nbsp;&nbsp;
+                                        <p><strong>Email: </strong>{e.data[0].email}</p>
+                                </div>
+                                <div className="bot">
+                                            <p><strong>Concern: </strong>{e.data[0].reason}  </p>
+                                            <p> {e.data[0].status}</p>
 
+
+                                </div> 
+                                </div>
+
+
+                                </>
+                            )
+                        })}
+                     </div>
                   </div>
 
         </div>
