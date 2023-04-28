@@ -8,6 +8,7 @@ import Dashboard from './Components/Dashboard/Dashboard';
 import Create from './Components/Create/Create';
 import LeavePermission from './Components/Categories/Manual/LeavePermission/LeavePermission';
 import LeavePermissionD from './Components/Categories/Document/LeavePermissionD/LeavePermissionD';
+import Login from './Components/Login/login';
 
 
 
@@ -16,6 +17,7 @@ function App() {
 <>
 <Router>
       <Routes>
+        <Route path="/" element={<Login />} />
         <Route path="/home" element={<Dashboard />} />
         <Route path="/create" element={<Create />} />
         <Route path="/mycontent" element={<Create />} />

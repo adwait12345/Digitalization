@@ -1,0 +1,27 @@
+.login-outer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Login{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 30px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+.Login h2{
+    font-weight:300 ;
+}
+.Login input{
+    border: 1px solid #1f1f1f29;
+    padding: 10px;
+    margin: 5px 0;
+}
+.Login button{
+    height: 40px;
+    cursor: pointer;
+}

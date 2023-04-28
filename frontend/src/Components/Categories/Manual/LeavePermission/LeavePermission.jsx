@@ -73,9 +73,9 @@ export default function LeavePermission() {
             <div className="leave-form">
               <form className="middle" onSubmit={(e) => submit(e)}>
                 <div className="middle-top">
-                  <h3>
+                  <h2>
                   Leave Application
-                  </h3>
+                  </h2>
                 </div>
                 <div className="middle-mid">
                   <input

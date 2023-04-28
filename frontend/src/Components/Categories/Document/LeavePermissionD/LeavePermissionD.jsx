@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './LeavePermissionD.css'
 import Sidebar from '../../../Sidebar/Sidebar'
 import { ref, getDownloadURL, uploadBytesResumable } from "firebase/storage";
-import { storage } from "./firebase";
+import { storage } from "../../../../firebase-config";
 export default function LeavePermissionD() {
 
     const [progress, setProgress] = useState(0);
